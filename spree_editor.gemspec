@@ -6,13 +6,13 @@ require 'spree_editor/version'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_editor'
+  s.name        = 'solidus_editor'
   s.version     = SpreeEditor.version
-  s.summary     = 'Adds support for WYSIWYG editors to Spree'
+  s.summary     = 'Adds support for WYSIWYG editors to Solidus'
   s.description = 'Currently supported editors are CKEditor and TinyMCE'
   s.required_ruby_version = '>= 2.1.0'
 
-  s.authors       = ['Alexander Shuhin', 'Roman Smirnov', 'divineforest', 'Marc Lee', 'Jeff Dutil']
+  s.authors       = ['Alexander Shuhin', 'Roman Smirnov', 'divineforest', 'Marc Lee', 'Jeff Dutil', 'David Gross']
   s.homepage      = 'https://github.com/spree/spree_editor'
   s.license       = 'BSD-3'
 
@@ -21,9 +21,11 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'ckeditor',      '~> 4.1.2'
-  s.add_dependency 'spree_backend', '~> 3.1.0.beta'
-  s.add_dependency 'tinymce-rails', '~> 4.2.5'
+  solidus_version = [">= 1.1.0.alpha", "< 2"]
+
+  s.add_dependency 'ckeditor',      '~> 4.1.6'
+  s.add_dependency "solidus_backend", solidus_version
+  s.add_dependency 'tinymce-rails', '~> 4.3.2'
 
   s.add_development_dependency 'i18n-spec', '>= 0.5.0'
   s.add_development_dependency 'guard-rspec'
